@@ -1,19 +1,18 @@
-# python-estudos
-Estudos com linguagem python para praticas e tornar mais experiente cada dia mais..!Um dos pilares fundamentais da programação em Python é o uso de funções, que permitem organizar o código de forma modular, reutilizável e mais legível.
-# Boletim de Notas do Natan
+def calcular_notas(listas_de_notas):
+    return sum(listas_de_notas) / len (listas_de_notas)
 
-Esse é um pequeno sistema de boletim de notas feito em **Python**, criado para calcular a média de um aluno e determinar se ele está **aprovado** ou **reprovado**.
+def verificar_situacao(media):
+    if media >= 7:
+        return("aprovado🎉")
+    else:
+        return("reprovado❌")
 
-## Funcionalidades
+nome = input("digite seu nome")
+notas = input("digite sua notas por espaços") 
+notas = [float (n) for n in notas.split()]
 
-- Recebe o **nome do aluno**.
-- Recebe várias **notas** separadas por espaço.
-- Calcula a **média das notas**.
-- Determina a **situação** do aluno:
-  - Média >= 7 → Aprovado 🎉
-  - Média < 7 → Reprovado ❌
-- Mostra um **relatório final** com nome, média e situação.
-
-## Tecnologias
-
-- Python 3.x
+media = calcular_notas(notas)
+situacao = verificar_situacao(media)
+print(f"nome:{nome}")  
+print(f"media:{media:.2f}")
+print(f"situacao:{situacao}")
